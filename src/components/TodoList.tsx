@@ -1,25 +1,16 @@
 import React from 'react'
 
-const TodoList: React.FC = (props) => {
-    const todos = [{
-        id: 't1',
-        text: 'Finish the course'
-    },
-    {
-        id: 't2',
-        text: 'Get some lunch'
-    },
-    {
-        id: 't3',
-        text: 'Call your mama'
-    },
-    {
-        id: 't4',
-        text: 'Choke a Chicken'
-    }];
+// Describe the shape of your props via an interface that the component will generically 'inherit' from
+interface TodoListProps {
+    // Expecting to get an array of objects with string key's id and text
+    items: {id: string, text: string }[]
+}
+const TodoList: React.FC<TodoListProps> = (props) => {
+    
+
     return (
         <ul>
-            {todos.map(todo => (
+            {props.items.map(todo => (
                     <>
                         <li key={todo.id}>{todo.text}</li>
                     </>
