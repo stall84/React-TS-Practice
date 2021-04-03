@@ -21,6 +21,8 @@ const App: React.FC = () => {
     id: 't4',
     text: 'Choke a Chicken'
 }];
+// We will want to send our data/props down from the topmost level (practically). Thus will be done
+// from here in App component
 
   return (
     <div className="App">
